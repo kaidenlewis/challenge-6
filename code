@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main() {
+int temp3[0];
+int a, b;
+int numbers[10] = {12, 15, 11, 9, 7, 18, 5, 16, 27, 4};
+int temp[0];
+int temp2[0];
+int differ[0];
+for (int i = 1; i < 10; ++i)
+  if (numbers[0] < numbers[i])  {
+    temp[0] = numbers[i];
+  }
+for (int i = 1; i < 10; ++i)
+  if (numbers[0] > numbers[i])  {
+    temp2[0] = numbers[i];
+  }
+  temp3[0] = temp[0] - temp2[0];
+  cout << temp3[0] << endl;
+}

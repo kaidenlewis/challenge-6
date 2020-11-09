@@ -10,10 +10,22 @@ int differ[0];
 for (int i = 1; i < 10; ++i)
   if (numbers[0] < numbers[i])  {
     temp[0] = numbers[i];
+    // This portion of the code is rewriting the temp[0] variable every single time it finds an element bigger than the first element. 
+    // But it doesn't compare to what has already been written, so in the end it will just have the last element that is bigger
+    // than the first, and not the biggest element. For instance, in your "numbers" array, if the 4 was a 14, then it would assign
+    // temp[0] that value because it is bigger than 12. But 14 isn't the biggest value, it's just the last value that is bigger than 
+    // the first.
+    //
+    // To find the largest element, you need a variable that holds that value. Let's call it max. In the loop, you would check the 
+    // elements in the "numbers" array against this max. If the numbers[i] was bigger than max, then max should be defined as numbers[i].
+    // You are doing something that seems similar, but it is fundamentally different because you are replacing temp[0] everytime
+    // the current element is bigger than numbers[0]. That's the first element. You need to replace temp[0] everytime the current
+    // element is bigger than temp[0]. 
   }
 for (int i = 1; i < 10; ++i)
   if (numbers[0] > numbers[i])  {
     temp2[0] = numbers[i];
+    // Exact same problem as above, but for the smallest element.
   }
   temp3[0] = temp[0] - temp2[0];
   cout << temp3[0] << endl;
